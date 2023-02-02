@@ -17,6 +17,6 @@ data class ProductsListDAO(
 
 val ProductsListDAO.toDTO : ProductListDTO
     get() = ProductListDTO(
-        sortOptions = productsFound?.sortOptions?.toMutableList() ?: mutableListOf(),
-        productsFound = productsFound?.productsFoundDAO?.toMutableList() ?: mutableListOf()
+        sortOptions = productsFound?.sortOptions?.map { it.toDTO }?.toMutableList() ?: mutableListOf(),
+        productsFound = productsFound?.productsFoundDAO?.map { it.toDTO }?.toMutableList() ?: mutableListOf()
     )

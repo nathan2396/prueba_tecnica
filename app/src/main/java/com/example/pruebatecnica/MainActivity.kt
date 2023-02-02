@@ -1,11 +1,16 @@
 package com.example.pruebatecnica
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.pruebatecnica.databinding.ActivityMainBinding
+import com.example.pruebatecnica.mvvm.common.GenericActivity
 
-class MainActivity : AppCompatActivity() {
+
+private lateinit var binding: ActivityMainBinding
+
+class MainActivity : GenericActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 }

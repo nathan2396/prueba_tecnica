@@ -1,5 +1,8 @@
 package com.example.pruebatecnica.data.dao
 
+import com.example.pruebatecnica.data.dto.ProductDTO
+import com.example.pruebatecnica.data.dto.SortOptionsDTO
+import com.example.pruebatecnica.data.dto.VariantsColorDTO
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
@@ -26,3 +29,17 @@ data class ProductDAO(
     @Expose
     val productColors:List<VariantsColorDAO> = listOf()
 )
+
+val ProductDAO.toDTO : ProductDTO
+    get() = ProductDTO(
+        smImage = smImage,
+        lgImage = lgImage,
+        xlImage = xlImage,
+        nameProduct = nameProduct,
+        productPrice = productPrice,
+        productPromoPrice = productPromoPrice,
+        productColors = productColors.map { it.toDTO }.toMutableList())
+
+
+
+
