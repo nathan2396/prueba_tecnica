@@ -1,1 +1,3 @@
 ## Prueba técnica - Donaldo Nathaniel Solorzano Torres
+
+- POR CUESTIONES DE PRACTICIDAD Y TIEMPO SE REALIZA DESARROLLO EN RAMA MAIN
